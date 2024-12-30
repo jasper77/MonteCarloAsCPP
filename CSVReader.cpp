@@ -36,7 +36,6 @@ bool CSVReader::readCSV() {
         if (std::getline(stream, date, ',') && stream >> items_completed) {
             date = trim(date); // Trim whitespace from date
             data_.emplace_back(Record{date, items_completed});
-            //data_.emplace_back(date, items_completed);
         } else {
             std::cerr << "Error: Malformed line: " << line << std::endl;
         }

@@ -39,9 +39,9 @@ int main(int argc, char* argv[]) {
 
         if (reader.readCSV()) {
             data = reader.getData();
-            for (const auto& record : data) {
-                std::cout << "Date: " << record.date << ", Items Completed: " << record.items_completed << std::endl;
-            }
+            //for (const auto& record : data) {
+            //    std::cout << "Date: " << record.date << ", Items Completed: " << record.items_completed << std::endl;
+            //}
         }
 
         // Run the Monte Carlo simulation
