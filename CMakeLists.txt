@@ -33,3 +33,6 @@ add_executable(run_mc_simulations
 
 # Link libraries (if required, e.g., if argparse depends on libraries)
 target_link_directories(run_mc_simulations PRIVATE ${HOMEBREW_LIBRARY_DIR})
+
+enable_testing()
+add_subdirectory(unit_tests)
