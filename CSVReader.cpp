@@ -35,7 +35,7 @@ bool CSVReader::readCSV() {
         // Parse the line
         if (std::getline(stream, date, ',') && stream >> items_completed) {
             date = trim(date); // Trim whitespace from date
-            data_.emplace_back(Record{date, items_completed});
+            data_.emplace_back(HistoryRecord{date, items_completed});
         } else {
             std::cerr << "Error: Malformed line: " << line << std::endl;
         }
@@ -46,6 +46,6 @@ bool CSVReader::readCSV() {
 }
 
 // Retrieves the data
-const std::vector<Record>& CSVReader::getData() const {
+const std::vector<HistoryRecord>& CSVReader::getData() const {
     return data_;
 }

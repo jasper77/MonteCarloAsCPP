@@ -1,20 +1,9 @@
-#ifndef CSV_READER_HPP
-#define CSV_READER_HPP
+#pragma once
 
 #include <string>
 #include <vector>
 
-// Define the Record struct
-struct Record {
-    std::string date;
-    int items_completed;
-
-    // Default constructor 
-    Record() = default;
-
-    // Constructor to initialize all members
-    Record(const std::string& d, int items) : date(d), items_completed(items) {}
-};
+#include "HistoryRecord.hpp"
 
 // Define the CSVReader class
 class CSVReader {
@@ -25,11 +14,10 @@ public:
     bool readCSV();
 
     // Retrieves the data
-    const std::vector<Record>& getData() const;
+    const std::vector<HistoryRecord>& getData() const;
 
 private:
     std::string filename_;
-    std::vector<Record> data_;
+    std::vector<HistoryRecord> data_;
 };
 
-#endif // CSV_READER_HPP

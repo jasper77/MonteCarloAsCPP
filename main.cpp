@@ -33,9 +33,8 @@ int main(int argc, char* argv[]) {
         std::cout << "Items: " << numItems << "\n";
 
         // Read the CSV file into a vector of records
+        std::vector<HistoryRecord> data; 
         CSVReader reader(filename);
-        
-        std::vector<Record> data; 
 
         if (reader.readCSV()) {
             data = reader.getData();

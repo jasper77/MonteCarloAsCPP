@@ -22,8 +22,8 @@ How It Works
 */
 
 // Constructor: Extracts daily completions from the vector of records
-MonteCarloSimulator::MonteCarloSimulator(const std::vector<Record>& data) 
-    : gen_(rd_()) {
+MonteCarloSimulator::MonteCarloSimulator(const std::vector<HistoryRecord>& data) 
+    : dailyCompletions_(), gen_(std::random_device{}()) {
     for (const auto& record : data) {
         dailyCompletions_.push_back(record.items_completed);
     }

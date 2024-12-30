@@ -3,11 +3,12 @@ find_package(GTest REQUIRED)
 
 set(TESTED_SOURCES
     ../CSVReader.cpp
+    ../MonteCarloSimulator.cpp
 )
 
 set(TEST_SOURCES
     CSVReaderTests.cpp
-    #MonteCarloSimulatorTests.cpp
+    MonteCarloSimulatorTests.cpp
 )
 
 add_executable(utests 

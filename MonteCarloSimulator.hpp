@@ -1,5 +1,4 @@
-#ifndef MONTE_CARLO_SIMULATOR_HPP
-#define MONTE_CARLO_SIMULATOR_HPP
+#pragma once
 
 #include <vector>
 #include <random>
@@ -9,7 +8,7 @@
 
 class MonteCarloSimulator {
 public:
-    explicit MonteCarloSimulator(const std::vector<Record>& data);
+    explicit MonteCarloSimulator(const std::vector<HistoryRecord>& data);
 
     // Run the simulation
     void runSimulation(int totalItems, int numTrials);
@@ -17,11 +16,17 @@ public:
     // Display the results
     void displayResults() const;
 
+    // Method to set a custom random number generator so the
+    // simulation can be tested deterministically
+    void setRandomGenerator(std::mt19937 gen) {
+        gen_ = gen;
+    }
+
+    std::vector<int> simulationResults_;
+
 private:
     std::vector<int> dailyCompletions_;
-    std::vector<int> simulationResults_;
     std::random_device rd_;
     std::mt19937 gen_;
 };
 
-#endif // MONTE_CARLO_SIMULATOR_HPP

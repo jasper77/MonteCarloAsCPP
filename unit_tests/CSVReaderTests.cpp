@@ -34,7 +34,7 @@ TEST(CSVReader, fillsVectorOfRecords) {
     reader.readCSV();
 
     // Act
-    const std::vector<Record>& data = reader.getData();
+    const std::vector<HistoryRecord>& data = reader.getData();
 
     // Assert
     EXPECT_EQ(data[0].date, "2024-02-11");
@@ -55,7 +55,7 @@ TEST(CSVReader, ignores_whitespace) {
     reader.readCSV();
 
     // Act
-    const std::vector<Record>& data = reader.getData();
+    const std::vector<HistoryRecord>& data = reader.getData();
 
     // Assert
     EXPECT_EQ(data[0].date, "2024-02-11");
@@ -74,7 +74,7 @@ TEST(CSVReader, ignores_empty_lines) {
     reader.readCSV();
 
     // Act
-    const std::vector<Record>& data = reader.getData();
+    const std::vector<HistoryRecord>& data = reader.getData();
 
     // Assert
     EXPECT_EQ(data[0].date, "2024-02-11");
